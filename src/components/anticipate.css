@@ -22,17 +22,20 @@
   padding-top: 100px;
   width: 100%;
 
-  background-image: url("../../public/anticipate-bg.png");
+  background-image: linear-gradient(rgba(8, 45, 25, 0.9), rgba(8, 45, 25, 0.9)),
+    url("../../public/anticipate-bg.png");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center center;
+
+  /* background-image: url("../../public/anticipate-bg.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */
 
   position: relative;
 
-  background-color: #375d49;
-
-  z-index: 1;
+  background-color: #375d49; */
 }
 
 .anticipate-section h1 {
@@ -46,13 +49,10 @@
 }
 
 .anticipate-section h3 {
- 
-  
   padding-bottom: 20px;
   padding-top: 20px;
   color: #f4ebc8;
   width: 68%;
-  
 }
 
 .img-box {
@@ -71,17 +71,16 @@
 }
 
 @media only screen and (min-width: 1020px) {
-  .anticipate-section {
+  /* .anticipate-section {
     background-image: url("../../public/anticipation-bg-lg.png");
-  }
+  } */
 
-  .anticipate-section h3{
-
+  .anticipate-section h3 {
     width: 50%;
   }
 
-  .anticipate-section h1{
-    font-size:4.5rem;
+  .anticipate-section h1 {
+    font-size: 4.5rem;
   }
 
   .anticipate-img {
@@ -89,6 +88,5 @@
     height: auto;
     display: block;
     margin: 0 auto;
-    
   }
 }
