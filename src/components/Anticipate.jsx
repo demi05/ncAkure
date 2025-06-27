@@ -3,10 +3,11 @@ import headerLg from "../../public/anticipate-header-lg.png"
 import anticipateImg from "../../public/anticipate.png";
 import anticipateImgLg from "../../public/anticipate-lg.png";
 import "./anticipate.css";
+import TicketButton from "./TicketButton";
 
 function Anticipate() {
   return (
-    <div className="anticipate-section">
+    <div className="anticipate-section relative">
       <picture>
         <source
           media="(min-width: 1020px)"
@@ -33,7 +34,9 @@ function Anticipate() {
           <img src={anticipateImg} className="anticipate-img" alt="" />
         </picture>
       </div>
-      <h3 className="danger">button goes here!!!!!!!</h3>
+     <TicketButton className="w-1/2 h-[50px] shadow-[0_4px_0_0_#FAA137]"/>
+
+      <img src="/footer_line2.png" alt="footer line up" className="w-screen block" />
     </div>
   );
 }

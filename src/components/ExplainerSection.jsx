@@ -9,16 +9,9 @@ function ExplainerSection() {
   return (
     <div className="explainer-section">
       
-        <div>
-          <picture>
-            <source
-              media="(min-width: 1020px)"
-              srcset={explainerHeader}
-              className=""
-            />
-            <img src={explainerHeaderLg} className="explainer-header" alt="" />
-          </picture>
-        </div>
+     
+          <h2 className="font-[FineVintage] text-[32px] leading-[114px]">Don't let the train leave you behind</h2>
+     
         <picture>
           <source
             media="(min-width: 1020px)"
@@ -28,7 +21,7 @@ function ExplainerSection() {
           <img src={explainerImgLg} className="explainer-img" alt="" />
         </picture>
       
-     <TicketButton />
+     <TicketButton className="w-1/2 h-[50px] shadow-[0_4px_0_0_#F4EBC8]" />
     </div>
   );
 }
