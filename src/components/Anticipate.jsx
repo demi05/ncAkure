@@ -1,5 +1,5 @@
-import header from "../../public/anticipate-header.png"
-import headerLg from "../../public/anticipate-header-lg.png"
+import header from "../../public/anticipate-header.png";
+import headerLg from "../../public/anticipate-header-lg.png";
 import anticipateImg from "../../public/anticipate.png";
 import anticipateImgLg from "../../public/anticipate-lg.png";
 import "./anticipate.css";
@@ -8,9 +8,11 @@ import TicketButton from "./TicketButton";
 function Anticipate() {
   return (
     <div className="anticipate-section relative">
-       <img src="/footer_line.svg" alt="footer line" className="w-screen" />
-     
-      <h2 className="font-[FineVintage] text-[#F4EBC8] text-[32px] leading-[114px]">The Travel Gear is Coming</h2>
+      <img src="/footer_line.svg" alt="footer line" className="w-screen" />
+
+      <h2 className="font-[FineVintage] text-[#F4EBC8] text-[32px] leading-[114px]">
+        The Travel Gear is Coming
+      </h2>
 
       <h3>
         CC Ajala has you in mind for the best experience possible and you will
@@ -30,9 +32,13 @@ function Anticipate() {
           <img src={anticipateImg} className="anticipate-img" alt="" />
         </picture>
       </div>
-     <TicketButton className="w-[40%] md:w-[35%] lg:w-[45%] xl:w-[20%] h-[70px] text-[24px] md:text-[30px] shadow-[0_4px_0_0_#FAA137]" />
+      <TicketButton className="w-[40%] md:w-[35%] lg:w-[45%] xl:w-[20%] h-[70px] text-[20px] sm:text-[18px] md:text-[30px] shadow-[0_4px_0_0_#FAA137]" />
 
-      <img src="/footer_line2.svg" alt="footer line up" className="w-screen block" />
+      <img
+        src="/footer_line2.svg"
+        alt="footer line up"
+        className="w-screen block"
+      />
     </div>
   );
 }
