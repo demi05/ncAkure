@@ -36,7 +36,7 @@ function Anticipate() {
       </div>
      <TicketButton className="w-1/2 h-[50px] shadow-[0_4px_0_0_#FAA137]"/>
 
-      <img src="/footer_line2.png" alt="footer line up" className="w-screen block" />
+      <img src="/footer_line2.svg" alt="footer line up" className="w-screen block" />
     </div>
   );
 }
