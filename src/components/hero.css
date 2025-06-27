@@ -25,12 +25,8 @@
   background-size: cover;
   background-position: center center;
   background-repeat: repeat;
-  /* background-attachment: fixed; */
-
   position: relative;
-
   background-color: #f4ebc8;
-
   z-index: 1;
   padding-top: 3em;
 }
@@ -40,37 +36,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2em;
 }
 
-.hero-section h3 {
-  width: 65%;
-  letter-spacing: 1.5px;
-  padding-top: 25px;
-  padding-bottom: 20px;
-  color: #000000;
-  line-height: 1.2;
+.hero-section h1 {
+  margin-top: 0.8em;
 }
 
 .img-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
   width: 100%;
 }
 
 .hero-img {
   width: 100%;
+  display: block;
 }
 
-.header-img {
-  margin-top: 4em;
-  max-width: 100%;
-}
-
-.ticket-btn-wrapper {
-  margin-top: 2rem;
-  z-index: 2;
+.text-outline {
+  text-shadow: 8px 8px 0 #000, 4px 4px 0 #000, 3px 3px 0 #000, -1px -1px 0 #000,
+    1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 @media only screen and (min-width: 1020px) {

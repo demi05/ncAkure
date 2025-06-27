@@ -38,7 +38,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-between w-full md:w-[70%] mx-auto">
+    <div className="flex items-center justify-between w-[90%] md:w-[70%] mx-auto">
       <img src="/logo.svg" alt="NC Akure logo" className="h-12" />
 
       <div className=" font-medium text-[#202120] font-raleway text-base leading-[91%]">

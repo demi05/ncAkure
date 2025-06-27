@@ -8,14 +8,10 @@ import TicketButton from "./TicketButton";
 function Anticipate() {
   return (
     <div className="anticipate-section relative">
-      <picture>
-        <source
-          media="(min-width: 1020px)"
-          srcset={header}
-          className=""
-        />
-        <img src={headerLg} className="" alt="" />
-      </picture>
+       <img src="/footer_line.svg" alt="footer line" className="w-screen" />
+     
+      <h2 className="font-[FineVintage] text-[#F4EBC8] text-[32px] leading-[114px]">The Travel Gear is Coming</h2>
+
       <h3>
         CC Ajala has you in mind for the best experience possible and you will
         get the chance to enjoy your trip with all you need.
@@ -34,7 +30,7 @@ function Anticipate() {
           <img src={anticipateImg} className="anticipate-img" alt="" />
         </picture>
       </div>
-     <TicketButton className="w-1/2 h-[50px] shadow-[0_4px_0_0_#FAA137]"/>
+     <TicketButton className="w-[40%] md:w-[35%] lg:w-[45%] xl:w-[20%] h-[70px] text-[24px] md:text-[30px] shadow-[0_4px_0_0_#FAA137]" />
 
       <img src="/footer_line2.svg" alt="footer line up" className="w-screen block" />
     </div>
