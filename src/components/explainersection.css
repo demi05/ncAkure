@@ -7,8 +7,16 @@
   width: 100%;
   height: 100%;
 
-  background-color: #d17a2e;
-  opacity: 0.5;
+  /* background-color: #d17a2e;
+  opacity: 0.5; */
+  /* background-color: rgba(195, 108, 30, 0.8);
+
+  z-index: -1; */
+  background-image: linear-gradient(rgba(209, 122, 46, 0.9)),
+    url("../../public/explainer-bg.png");
+  background-blend-mode: multiply;
+  background-size: cover;
+  mix-blend-mode: multiply;
 
   z-index: -1;
 }

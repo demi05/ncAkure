@@ -22,12 +22,20 @@
   padding-top: 100px;
   width: 100%;
 
+  background-image: linear-gradient(rgba(8, 45, 25, 0.9), rgba(8, 45, 25, 0.9)),
+    url("../../public/anticipate-bg.png");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center center;
+
+  /* background-image: url("../../public/anticipate-bg.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
   position: relative;
 
-  background-color: #375d49;
-  background: url("/anticipate-bg.png") center center / cover no-repeat;
-
-  z-index: 1;
+  background-color: #375d49; */
 }
 
 .anticipate-section h1 {
@@ -63,9 +71,9 @@
 }
 
 @media only screen and (min-width: 1020px) {
-  .anticipate-section::before {
-    background: url("/anticipation-bg-lg.png");
-  }
+  /* .anticipate-section {
+    background-image: url("../../public/anticipation-bg-lg.png");
+  } */
 
   .anticipate-section h3 {
     width: 50%;
