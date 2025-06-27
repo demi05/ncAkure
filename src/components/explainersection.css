@@ -1,69 +1,67 @@
 .explainer-section::before {
-    content: "";
-  
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  
-    background-color: #D17A2E;
-    opacity: 0.5;
-  
-    z-index: -1;
-  }
-  
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: #d17a2e;
+  opacity: 0.5;
+
+  z-index: -1;
+}
+
+.explainer-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+
+  background-image: url("../../public/explainer-bg.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  /* background-attachment: fixed; */
+
+  position: relative;
+
+  background-color: #d17a2e;
+
+  z-index: 1;
+}
+
+.explainer-header {
+  position: relative;
+  top: 70px;
+}
+
+.explainer-img {
+  width: 100%;
+}
+
+.button-holder {
+  color: red;
+  position: relative;
+  top: -100px;
+}
+
+@media only screen and (min-width: 1020px) {
   .explainer-section {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    
-
-    width: 100%;
-  
-    background-image: url("../../public/explainer-bg.png");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: repeat;
-    /* background-attachment: fixed; */
-  
-    position: relative;
-  
-    background-color: #D17A2E;
-  
-    z-index: 1;
+    background-image: url("../../public/explainer-bg-lg.png");
   }
 
-  .explainer-header{
-    position: relative;
-    top: 70px;
-  }
-
-  .explainer-img{
-    width: 100%;
-  }
-
-  .button-holder{
-    color: red;
-    position: relative;
-    top: -100px;
-  }
-
-  @media only screen and (min-width: 1020px){
-    .explainer-section {
-        background-image: url("../../public/explainer-bg-lg.png");
-    }
-
-
-    .explainer-img{
-        width: 70%;
+  .explainer-img {
+    width: 70%;
     height: auto;
     display: block;
     margin: 0 auto;
-    }
-
-    .button-holder{
-        top: -150px;
-    }
   }
+
+  .button-holder {
+    top: -150px;
+  }
+}

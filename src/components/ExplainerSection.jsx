@@ -3,6 +3,7 @@ import explainerImg from "../../public/explainer.png";
 import explainerImgLg from "../../public/explainer-lg.png";
 import explainerHeader from "../../public/explainer-header.png";
 import explainerHeaderLg from "../../public/explainer-header-lg.png";
+import TicketButton from "./TicketButton";
 
 function ExplainerSection() {
   return (
@@ -27,7 +28,7 @@ function ExplainerSection() {
           <img src={explainerImgLg} className="explainer-img" alt="" />
         </picture>
       
-      <h3 className="button-holder">button goes here!!!!</h3>
+     <TicketButton />
     </div>
   );
 }
