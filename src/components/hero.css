@@ -67,4 +67,24 @@
     .hero{
         background-image: url("../../public/hero-bg-lg.png");
     }
+
+    .img-box {
+        display: flex;
+        /* You can keep this as center, or remove it */
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        width: 100%;
+    }
+    
+    .hero-img {
+        width: 80%;
+        height: auto;
+        display: block;
+        
+        /* ADD THIS: Pushes the item to the right by taking all left space */
+        margin-left: auto; git
+        
+        /* You can remove margin-right: 0; as it's not needed with margin-left: auto */
+    }
 }
