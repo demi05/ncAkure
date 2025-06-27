@@ -1,33 +1,22 @@
 import "./explainersection.css";
-import explainerImg from "../../public/explainer.png";
-import explainerImgLg from "../../public/explainer-lg.png";
-import explainerHeader from "../../public/explainer-header.png";
-import explainerHeaderLg from "../../public/explainer-header-lg.png";
+import explainerImgLg from "../../public/explainer.png";
+import TicketButton from "./TicketButton";
 
 function ExplainerSection() {
   return (
     <div className="explainer-section">
+       <img src="/footer_line.svg" alt="footer line" className="w-screen" />
+     
+          <h2 className="font-[FineVintage] text-[32px] leading-[114px]">Don't let the train leave you behind</h2>
+     
+     <div className="w-1/2">
+          <img src={explainerImgLg} className="explainer-img  scale-110" alt="" />
+     </div>
+  <div className="h-20 md:h-28 xl:h-36"></div>
       
-        <div>
-          <picture>
-            <source
-              media="(min-width: 1020px)"
-              srcset={explainerHeader}
-              className=""
-            />
-            <img src={explainerHeaderLg} className="explainer-header" alt="" />
-          </picture>
-        </div>
-        <picture>
-          <source
-            media="(min-width: 1020px)"
-            srcset={explainerImgLg}
-            className="explainer-img"
-          />
-          <img src={explainerImgLg} className="explainer-img" alt="" />
-        </picture>
-      
-      <h3 className="button-holder">button goes here!!!!</h3>
+     <TicketButton className="w-[40%] text-black md:w-[35%] lg:w-[45%] xl:w-[20%] h-[70px] text-[24px] md:text-[30px] shadow-[0_4px_0_0_#F4EBC8]" />
+
+      <img src="/footer_line2.svg" alt="footer line" className="w-screen" />
     </div>
   );
 }

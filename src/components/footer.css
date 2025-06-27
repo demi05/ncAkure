@@ -1,29 +1,15 @@
-.footer{
-    width: 100%;
-    padding-top: 100px;
+footer {
+  background-image: linear-gradient(#fffde8, #fffde8), url("/vector_train.svg");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center center;
 }
 
-.footer-logo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column  ;
-    margin-bottom: 0px;
-}
-
-.footer-icon{
-    margin-top: 5px;
-}
-
-.footer-img{
-    width: 100%;  
-    height: auto; 
-    display: block;
-    
-}
-
-@media only screen and (min-width: 1020px){
-    .footer-icon{
-        margin-top: 12px;
-    }
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* top: 50%; */
+  background-color: #fffde8;
+  z-index: -1;
 }
