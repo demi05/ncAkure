@@ -8,11 +8,11 @@ function Footer() {
       <img src="/footer_line.svg" alt="footer line" className="w-screen" />
 
       <div className="train-img mt-auto flex flex-col items-center justify-between gap-6">
-        <img
+     <a href="#hero" className="scroll-smooth">  <img
           src="/logo.svg"
           alt="NC Akure logo"
           className="w-[120px] md:w-[180px] h-[56px] md:h-[80px]"
-        />
+        /> </a>
 
         <a href="https://www.instagram.com/ainconferences/" target="blank">
           <IoLogoInstagram size={32} />
