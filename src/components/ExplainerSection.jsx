@@ -7,7 +7,7 @@ function ExplainerSection() {
     <div className="explainer-section">
       <img src="/footer_line.svg" alt="footer line" className="w-screen" />
 
-      <h2 className="font-[FineVintage] text-[32px] leading-[114px]">
+      <h2 className="font-[FineVintage] text-[32px] md:text-5xl leading-[114px]">
         Don't let the train leave you behind
       </h2>
 

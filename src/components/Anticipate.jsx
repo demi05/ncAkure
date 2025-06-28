@@ -10,7 +10,7 @@ function Anticipate() {
     <div className="anticipate-section relative">
       <img src="/footer_line.svg" alt="footer line" className="w-screen" />
 
-      <h2 className="font-[FineVintage] text-[#F4EBC8] text-[32px] leading-[114px]">
+      <h2 className="font-[FineVintage] text-[#F4EBC8] text-[32px] md:text-5xl leading-[114px]">
         The Travel Gear is Coming
       </h2>
 

@@ -4,7 +4,7 @@ import TicketButton from "./TicketButton";
 function Herotext()
 {
     return (
-      <div className="hero-section">
+      <div className="hero-section w-[90%] md:w-full mx-auto">
         <Header /> 
         <h1 className="font-[FineVintage] font-bold  text-[#E28B3F] text-[45px] sm:text-6xl  md:text-7xl text-outline">The Train is Here</h1>
         <h3 className="font-raleway font-medium text-[24px] md:text-[32px] text-black leading-[103%] text-center tracking-[1.5px] w-[80%] md:w-[65%]">
