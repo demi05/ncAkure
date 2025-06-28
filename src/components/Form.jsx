@@ -7,6 +7,7 @@ import LastPage from "./LastPage";
 import NavigationButton from "./NavigationButton";
 import PageIndicator from "./PageIndicator";
 import { useNavigate } from "react-router-dom";
+import { submitForm } from "./api/SubmitForm";
 
 function Form() {
   const {
@@ -19,7 +20,9 @@ function Form() {
   } = useForm();
   const [currentPage, setCurrentPage] = useState(0);
     const totalPages = 4;
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+     const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   const [selectedLC, setSelectedLC] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -74,11 +77,25 @@ function Form() {
     }
   };
 
-  const onSubmit = (data) => {
-    console.log("Form submitted:", data);
-    reset();
+  const onSubmit = async (data) => {
+    console.log("Form data before submission:", data);
+    if (isSubmitting) return; // Prevent multiple submissions
+    setIsSubmitting(true);
+    setSubmitError(null);
+    
+     try {
+
+      await submitForm(data);
+      
+      reset();
       setCurrentPage(0);
       navigate("/registration-complete");
+    } catch (error) {
+      console.error("Submission error:", error);
+      setSubmitError(error.message || "Failed to submit form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -95,6 +112,13 @@ function Form() {
           errors={errors}
         />
       )}
+
+      {submitError && (
+        <div className="error-message">
+          {submitError}
+        </div>
+      )}
+
       {currentPage === 2 && <ThirdPage register={register} errors={errors} />}
           {currentPage === 3 && <LastPage register={register} errors={errors} />}
           <PageIndicator totalPages={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
