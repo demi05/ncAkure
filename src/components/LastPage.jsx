@@ -49,8 +49,7 @@ function LastPage({ register, errors }) {
       </div>
       <div>
         <label for="related_by">
-          We know you're a bonafide Ajala. But what do we call you on this
-          expenditure?
+         How are you related to this contact?
         </label>
         <input
           type="text"
