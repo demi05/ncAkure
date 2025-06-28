@@ -1,6 +1,5 @@
 import Form from "./Form";
 import Footer from "./Footer";
-import formheader from "../../public/form-header.png";
 
 import "./form.css";
 import Header from "./Header";
@@ -10,7 +9,9 @@ function Signup() {
     <div>
       <div className="form-container">
         <Header hideTicket />
-        <img src={formheader} alt="" style={{ paddingTop: "10px" }} />
+        <h2 className="font-[FineVintage] text-[48px] md:text-[96px]">
+          Get Your Ticket
+        </h2>
         <Form />
       </div>
       <Footer />
