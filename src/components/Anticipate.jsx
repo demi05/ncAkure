@@ -1,5 +1,3 @@
-import header from "../../public/anticipate-header.png";
-import headerLg from "../../public/anticipate-header-lg.png";
 import anticipateImg from "../../public/anticipate.png";
 import anticipateImgLg from "../../public/anticipate-lg.png";
 import "./anticipate.css";

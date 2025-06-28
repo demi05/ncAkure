@@ -49,33 +49,75 @@ label {
   font-size: 1.2em;
   font-weight: 600;
   font-family: "Raleway", sans-serif;
-
 }
 
-input , select{
+input,
+select {
   padding: 10px;
-  border: 1px solid #E28B3F;
-  background-color: #E28B3F;
+  border: 1px solid #e28b3f;
+  background-color: #e28b3f;
   color: #ffff;
   box-shadow: 5px 5px 0 0 #000;
 }
 
-.list, .dropdown-button{
-    padding: 10px;
+.list,
+.dropdown-button {
+  padding: 10px;
 }
 
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
 
-input:focus, select:focus {
-    outline: none;
-    
-  }
+.radio-option {
+  position: relative;
+  padding: 10px 20px;
+  border: 1px solid #e28b3f;
+  background-color: #e28b3f;
+  color: #fff;
+  box-shadow: 5px 5px 0 0 #000;
+  cursor: pointer;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 0;
+}
+
+.radio-option input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.radio-option input[type="radio"]:checked {
+  background-color: #fff;
+}
+
+.radio-text {
+  color: #fff;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
 
 @media only screen and (min-width: 1020px) {
   .form-container {
     background-image: url("../../public/anticipation-bg-lg.png");
   }
 
-  label{
+  label {
     font-size: 1.4rem;
   }
 
