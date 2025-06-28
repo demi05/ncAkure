@@ -1,17 +1,17 @@
-import "./app.css"
-import Anticipate from "./components/Anticipate";
-import ExplainerSection from "./components/ExplainerSection";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./app.css";
+import Applayout from "./Applayout";
+import Signup from "./components/Signup";
 
-function App()
-{
-  return <div className="main-container">
-    <Hero />
-    <ExplainerSection />
-    <Anticipate />
-    <Footer />
-  </div>;
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Applayout />} />
+        <Route path="signup" element={<Signup />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
