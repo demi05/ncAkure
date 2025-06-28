@@ -1,5 +1,4 @@
 import Herotext from "./Herotext";
-import heroImg from "../../public/hero-image.png";
 import heroImgLg from "../../public/hero-image-lg.png";
 import "./hero.css";
 
