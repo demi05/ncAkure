@@ -1,0 +1,449 @@
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+
+function Form() {
+  const {
+    register,
+    setValue,
+    handleSubmit,
+    reset,
+    trigger,
+    formState: { errors },
+  } = useForm();
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedLC, setSelectedLC] = useState("");
+  const [currentPage, setCurrentPage] = useState(0);
+  const totalPages = 4;
+
+  const locations = [
+    "Abeokuta",
+    "Abuja",
+    "Akure",
+    "Benin",
+    "Calabar",
+    "Enugu",
+    "Ibadan",
+    "Ife",
+    "Ilorin",
+    "Jos",
+    "Lagos",
+    "Port-Harcourt",
+    "EST",
+  ];
+
+  const toggleDropdown = () => setIsOpen((prev) => !prev);
+
+  const handleSelect = (value) => {
+    setSelectedLC(value);
+    setValue("lc", value, { shouldValidate: true });
+    setIsOpen(false);
+  };
+
+  const handleNext = async () => {
+    // Validate fields on current page
+    let isValid = true;
+
+    // Define which fields to validate for each page
+    const pageValidations = [
+      ["name", "email", "gender", "dob", "lc"],
+      ["year_joined", "role", "first_time", "expect", "social"],
+      ["allergies", "antidote", "room_with_opps"],
+      ["emergency", "related_by", "aob"],
+    ];
+
+    if (currentPage < totalPages - 1) {
+      isValid = await trigger(pageValidations[currentPage]);
+    }
+
+    if (isValid && currentPage < totalPages - 1) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const onSubmit = (data) => {
+    console.log("Form submitted:", data);
+    alert("Form submitted successfully!");
+    reset();
+    setCurrentPage(0);
+  };
+
+  return (
+    <div className="form-container">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        {/* Page 1 */}
+        {currentPage === 0 && (
+          <div className="page-content">
+            <div>
+              <label htmlFor="name">
+                We know you're a bonafide Ajala. But what do we call you on this
+                expenditure?
+              </label>
+              <input
+                type="text"
+                placeholder="Name"
+                id="name"
+                {...register("name", {
+                  required: "Please enter your Name",
+                })}
+              />
+              {errors.name && <p className="error">{errors.name.message}</p>}
+            </div>
+
+            <div>
+              <label htmlFor="email">
+                There's a lot to experience on this journey, and we want to
+                always give you updates. To what address do we send the pigeon
+                with the message?
+              </label>
+              <input
+                type="email"
+                placeholder="Mail"
+                id="email"
+                {...register("email", {
+                  required: "Pls type in your email",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Invalid email address",
+                  },
+                })}
+              />
+              {errors.email && <p className="error">{errors.email.message}</p>}
+            </div>
+
+            <div>
+              <label htmlFor="gender">
+                Are you an adventurer? Or adventuress?
+              </label>
+              <select
+                {...register("gender", { required: "Pls Pick an Option" })}
+              >
+                <option value="" disabled selected hidden>
+                  Gender
+                </option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              {errors.gender && (
+                <p className="error">{errors.gender.message}</p>
+              )}
+            </div>
+
+            <div>
+              <label htmlFor="dob">
+                In what year were you born to Explore?
+              </label>
+              <input
+                type="date"
+                {...register("dob", {
+                  required: "Date of birth is required",
+                  validate: (value) => {
+                    const selectedDate = new Date(value);
+                    const today = new Date();
+                    if (selectedDate > today) {
+                      return "Date of birth cannot be in the future";
+                    }
+                    return true;
+                  },
+                })}
+              />
+              {errors.dob && <p className="error">{errors.dob.message}</p>}
+            </div>
+
+            <div>
+              <label htmlFor="lc" className="block mb-1 font-medium">
+                Where do you call home?
+              </label>
+              <input
+                type="hidden"
+                {...register("lc", { required: "Pls Pick an Option" })}
+              />
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={toggleDropdown}
+                  className="w-full mb-11 text-left border dropdown-button border-[#E28B3F] bg-[#E28B3F] text-white font-medium shadow-[5px_5px_0_0_#000]"
+                >
+                  {selectedLC || "LC"}
+                </button>
+                {isOpen && (
+                  <ul className="absolute z-10 mt-6 w-full border border-[#E28B3F] rounded bg-[#E28B3F] shadow-[5px_5px_0_0_#000]">
+                    {locations.map((loc, index) => (
+                      <li
+                        key={loc}
+                        onClick={() => handleSelect(loc.toLowerCase())}
+                        className={`list text-white cursor-pointer hover:bg-[#d97c2e] ${
+                          index !== locations.length - 1
+                            ? "border-b border-black"
+                            : ""
+                        }`}
+                      >
+                        {loc}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              {errors.lc && <p className="error">{errors.lc.message}</p>}
+            </div>
+          </div>
+        )}
+
+        {/* Page 2 */}
+        {currentPage === 1 && (
+          <div className="page-content">
+            <div>
+              <label htmlFor="year_joined">
+                In what year did your journeyings begin?
+              </label>
+              <input
+                type="text"
+                placeholder="Year you Joined AIESEC"
+                id="year_joined"
+                {...register("year_joined", {
+                  required: "Please enter the year you joined AIESEC",
+                })}
+              />
+              {errors.year_joined && (
+                <p className="error">{errors.year_joined.message}</p>
+              )}
+            </div>
+
+            <div>
+              <label htmlFor="role">
+                Other than being an Ajala, what else do you do?
+              </label>
+              <input
+                type="text"
+                placeholder="Role"
+                id="role"
+                {...register("role", {
+                  required: "Please state your role",
+                })}
+              />
+              {errors.role && <p className="error">{errors.role.message}</p>}
+            </div>
+
+            <div>
+              <label htmlFor="first_time">
+                Is this your first time on the road? Or are you an experienced
+                voyager?
+              </label>
+              <input
+                type="text"
+                placeholder="First Conference Experience?"
+                id="first_time"
+                {...register("first_time", {
+                  required: "Is this your First Conference?",
+                })}
+              />
+              {errors.first_time && (
+                <p className="error">{errors.first_time.message}</p>
+              )}
+            </div>
+
+            <div>
+              <label htmlFor="expect">
+                You've experienced it all, but what would make a magical
+                experience this time?
+              </label>
+              <input
+                type="text"
+                placeholder="Expectations"
+                id="expect"
+                {...register("expect", {
+                  required: "Please state your expectations",
+                })}
+              />
+              {errors.expect && (
+                <p className="error">{errors.expect.message}</p>
+              )}
+            </div>
+
+            <div>
+              <label htmlFor="social">
+                What do they call you in the digital sphere?
+              </label>
+              <input
+                type="text"
+                placeholder="Social Media Handle"
+                id="social"
+                {...register("social", {
+                  required: "Please type in your social media handle",
+                })}
+              />
+              {errors.social && (
+                <p className="error">{errors.social.message}</p>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Page 3 */}
+        {currentPage === 2 && (
+          <div className="page-content">
+            <div>
+              <label htmlFor="allergies">
+                Before we set off on this journey, is there anything your body
+                rebels against?
+              </label>
+              <input
+                type="text"
+                placeholder="Allergies"
+                id="allergies"
+                {...register("allergies", {
+                  required: "Do you have any Allergies?",
+                })}
+              />
+              {errors.allergies && (
+                <p className="error">{errors.allergies.message}</p>
+              )}
+            </div>
+
+            <div>
+              <label htmlFor="antidote">
+                What's the balm that heals this ache?
+              </label>
+              <input
+                type="text"
+                placeholder="Antidote"
+                id="antidote"
+                {...register("antidote", {
+                  required: "What is the antidote",
+                })}
+              />
+              {errors.antidote && (
+                <p className="error">{errors.antidote.message}</p>
+              )}
+            </div>
+
+            <div>
+              <label htmlFor="room_with_opps">
+                Would you share a tent (room) with an explorer of the opposite
+                gender?
+              </label>
+              <div className="room-opps">
+                <label>
+                  <input
+                    type="radio"
+                    name="room_with_opps"
+                    value="yes"
+                    {...register("room_with_opps", {
+                      required: "Pls Select Yes or No",
+                    })}
+                  />
+                  <span>Yes</span>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="room_with_opps"
+                    value="no"
+                    {...register("room_with_opps", {
+                      required: "Pls Select Yes or No",
+                    })}
+                  />
+                  <span>No</span>
+                </label>
+              </div>
+              {errors.room_with_opps && (
+                <p className="error">{errors.room_with_opps.message}</p>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Page 4 */}
+        {currentPage === 3 && (
+          <div className="page-content">
+            <div>
+              <label htmlFor="emergency">
+                Who do we call if things head south?
+              </label>
+              <input
+                type="text"
+                placeholder="Emergency Contact"
+                id="emergency"
+                {...register("emergency", {
+                  required: "What is your emergency contact",
+                })}
+              />
+              {errors.emergency && (
+                <p className="error">{errors.emergency.message}</p>
+              )}
+            </div>
+
+            <div>
+              <label htmlFor="related_by">
+                How are you related to your emergency contact?
+              </label>
+              <input
+                type="text"
+                placeholder="Relationship with Emergency Contact"
+                id="related_by"
+                {...register("related_by", {
+                  required: "How are you Related",
+                })}
+              />
+              {errors.related_by && (
+                <p className="error">{errors.related_by.message}</p>
+              )}
+            </div>
+
+            <div>
+              <label htmlFor="aob">
+                Is there anything else you'll like to say to us?
+              </label>
+              <input
+                type="text"
+                placeholder="Any Special Instructions"
+                id="aob"
+                {...register("aob", {
+                  required: "Do you have any special instructions?",
+                })}
+              />
+              {errors.aob && <p className="error">{errors.aob.message}</p>}
+            </div>
+          </div>
+        )}
+
+        {/* Page indicators */}
+        <div className="page-indicators">
+          {Array.from({ length: totalPages }).map((_, index) => (
+            <div
+              key={index}
+              className={`indicator ${currentPage === index ? "active" : ""}`}
+              onClick={() => setCurrentPage(index)}
+            />
+          ))}
+        </div>
+
+        {/* Navigation buttons */}
+        <div className="navigation-buttons">
+          {currentPage > 0 && (
+            <button type="button" className="prev-btn" onClick={handlePrev}>
+              Previous
+            </button>
+          )}
+
+          {currentPage < totalPages - 1 ? (
+            <button type="button" className="next-btn" onClick={handleNext}>
+              Next
+            </button>
+          ) : (
+            <button type="submit" className="submit-btn">
+              Submit
+            </button>
+          )}
+        </div>
+      </form>
+    </div>
+  );
+}
+
+export default Form;

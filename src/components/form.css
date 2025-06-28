@@ -64,6 +64,32 @@ input , select{
     padding: 10px;
 }
 
+.room-opps{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+.room-opps label{
+    border: 1px solid #E28B3F;
+    padding: 7px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 5px 5px 0 0 #000;
+    background-color: #E28B3F;
+    color: #ffff;
+}
+
+.room-opps label input{
+    box-shadow: none;
+    margin-right: auto;
+    
+}
 
 input:focus, select:focus {
     outline: none;

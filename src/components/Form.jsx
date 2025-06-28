@@ -233,28 +233,30 @@ function Form() {
         <label for="room_with_opps">
           Would you share a tent (room) with an explorer of the opposite gender?
         </label>
-        <label>
-          <input
-            type="checkbox"
-            value="yes"
-            id="room_with_opps"
-            {...register("room_with_opps", {
-              required: "Pls Select Yes or No",
-            })}
-          />
-          Yes
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            value="no"
-            id="room_with_opps"
-            {...register("room_with_opps", {
-              required: "Pls Select Yes or No",
-            })}
-          />
-          No
-        </label>
+        <div className="room-opps">
+          <label>
+            <input
+              type="checkbox"
+              value="yes"
+              id="room_with_opps"
+              {...register("room_with_opps", {
+                required: "Pls Select Yes or No",
+              })}
+            />
+            Yes
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              value="no"
+              id="room_with_opps"
+              {...register("room_with_opps", {
+                required: "Pls Select Yes or No",
+              })}
+            />
+            No
+          </label>
+        </div>
       </div>
       <div>
         <label for="emergency">Who do we call if things head south?</label>
