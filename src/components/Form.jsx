@@ -16,12 +16,13 @@ function Form() {
     handleSubmit,
     reset,
     trigger,
+    clearErrors,
     formState: { errors },
   } = useForm();
   const [currentPage, setCurrentPage] = useState(0);
-    const totalPages = 4;
-    const navigate = useNavigate();
-     const [isSubmitting, setIsSubmitting] = useState(false);
+  const totalPages = 4;
+  const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(null);
 
   const [selectedLC, setSelectedLC] = useState("");
@@ -51,24 +52,23 @@ function Form() {
   };
 
   const handleNext = async () => {
-    
-    let isValid = true;
-
     //  fields to validate for each page
+
     const pageValidations = [
       ["name", "email", "gender", "dob"],
       ["lc", "year_joined", "role", "first_time"],
       ["expect", "social", "allergies", "antidote"],
-      ["room_with_opps", "emergency", "related_by", "aob"],
+      []
     ];
 
     if (currentPage < totalPages - 1) {
-      isValid = await trigger(pageValidations[currentPage]);
-    }
-
-    if (isValid && currentPage < totalPages - 1) {
-      setCurrentPage(currentPage + 1);
-    }
+      if (await trigger(pageValidations[currentPage])) {
+        setCurrentPage(currentPage + 1);
+      }
+    }  else {
+    clearErrors(); 
+    setCurrentPage(currentPage + 1);
+  }
   };
 
   const handlePrev = () => {
@@ -82,17 +82,18 @@ function Form() {
     if (isSubmitting) return; // Prevent multiple submissions
     setIsSubmitting(true);
     setSubmitError(null);
-    
-     try {
 
+    try {
       await submitForm(data);
-      
+
       reset();
       setCurrentPage(0);
       navigate("/registration-complete");
     } catch (error) {
       console.error("Submission error:", error);
-      setSubmitError(error.message || "Failed to submit form. Please try again.");
+      setSubmitError(
+        error.message || "Failed to submit form. Please try again."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -113,20 +114,21 @@ function Form() {
         />
       )}
 
-      {submitError && (
-        <div className="error-message">
-          {submitError}
-        </div>
-      )}
+      {submitError && <div className="error-message">{submitError}</div>}
 
       {currentPage === 2 && <ThirdPage register={register} errors={errors} />}
-          {currentPage === 3 && <LastPage register={register} errors={errors} />}
-          <PageIndicator totalPages={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      {currentPage === 3 && <LastPage register={register} errors={errors} />}
+      <PageIndicator
+        totalPages={totalPages}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
       <NavigationButton
         currentPage={currentPage}
         totalPages={totalPages}
         handleNext={handleNext}
         handlePrev={handlePrev}
+        isSubmitting={isSubmitting}
       />
     </form>
   );

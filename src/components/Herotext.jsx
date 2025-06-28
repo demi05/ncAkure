@@ -11,7 +11,7 @@ function Herotext()
           It's time for you to hop on the NC Akure train to take you on the long
           awaited journey to a new era. You cannot miss out now.
         </h3>
-       <TicketButton className="w-[40%] md:w-[35%] lg:w-[25%] xl:w-[20%] h-[70px] text-[20px] sm:text-[18px] md:text-[30px] shadow-[0_4px_0_0_#FAA137]" />
+       <TicketButton className="w-[45%] md:w-[35%] lg:w-[25%] xl:w-[20%] h-[70px] text-[20px] sm:text-[18px] md:text-[30px] shadow-[0_4px_0_0_#FAA137]" />
       </div>
     );
 }
