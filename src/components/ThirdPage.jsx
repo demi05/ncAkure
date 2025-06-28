@@ -20,7 +20,7 @@ function ThirdPage({ register, errors }) {
         <label for="social">What do they call you in the digital sphere?</label>
         <input
           type="text"
-          placeholder="Social Media Handle"
+          placeholder="Social media handle"
           id="social"
           {...register("social", {
             required: "Please type in your social media handle",

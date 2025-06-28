@@ -37,7 +37,7 @@ function LastPage({ register, errors }) {
         <label for="emergency">Who do we call if things head south?</label>
         <input
           type="text"
-          placeholder="Emergency Contact"
+          placeholder="Emergency contact"
           id="emergency"
           {...register("emergency", {
             required: "What is your emergency contact",
@@ -53,7 +53,7 @@ function LastPage({ register, errors }) {
         </label>
         <input
           type="text"
-          placeholder="Relationship with Emergency Contact"
+          placeholder="Relationship with emergency contact"
           id="related_by"
           {...register("related_by", {
             required: "How are you Related",
@@ -69,7 +69,7 @@ function LastPage({ register, errors }) {
         </label>
         <input
           type="text"
-          placeholder="Any Special Instructions"
+          placeholder="Any special instructions"
           id="aob"
           {...register("aob", {
             required: "Do you have any special instructions?",
@@ -81,4 +81,4 @@ function LastPage({ register, errors }) {
   );
 }
 
-export default LastPage
+export default LastPage;
