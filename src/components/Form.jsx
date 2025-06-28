@@ -16,9 +16,11 @@ function Form() {
     handleSubmit,
     reset,
     trigger,
-    clearErrors,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+  mode: "onSubmit",
+  reValidateMode: "onSubmit",
+});
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = 4;
   const navigate = useNavigate();
@@ -65,10 +67,7 @@ function Form() {
       if (await trigger(pageValidations[currentPage])) {
         setCurrentPage(currentPage + 1);
       }
-    }  else {
-    clearErrors(); 
-    setCurrentPage(currentPage + 1);
-  }
+    } 
   };
 
   const handlePrev = () => {
