@@ -23,7 +23,7 @@ function SecondPage({
           <button
             type="button"
             onClick={toggleDropdown}
-            className="w-full mb-11 text-left border dropdown-button border-[#E28B3F] bg-[#E28B3F] text-white font-medium shadow-[5px_5px_0_0_#000]"
+            className="w-ful text-left border dropdown-button border-[#E28B3F] bg-[#E28B3F] text-white font-medium shadow-[5px_5px_0_0_#000]"
           >
             {selectedLC || "LC"}
           </button>
