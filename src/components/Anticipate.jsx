@@ -1,5 +1,3 @@
-import header from "../../public/anticipate-header.png";
-import headerLg from "../../public/anticipate-header-lg.png";
 import anticipateImg from "../../public/anticipate.png";
 import anticipateImgLg from "../../public/anticipate-lg.png";
 import "./anticipate.css";
@@ -10,7 +8,7 @@ function Anticipate() {
     <div className="anticipate-section relative">
       <img src="/footer_line.svg" alt="footer line" className="w-screen" />
 
-      <h2 className="font-[FineVintage] text-[#F4EBC8] text-[32px] leading-[114px]">
+      <h2 className="font-[FineVintage] text-[#F4EBC8] text-[32px] md:text-5xl leading-[114px]">
         The Travel Gear is Coming
       </h2>
 

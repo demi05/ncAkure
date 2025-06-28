@@ -4,7 +4,7 @@ import "./footer.css";
 
 function Footer() {
   return (
-    <footer className="relative w-full bg-[#FFFDE8] min-h-[40vh] flex flex-col items-center">
+    <footer className="relative w-full bg-[#FFFDE8] flex flex-col items-center">
       <img src="/footer_line.svg" alt="footer line" className="w-screen" />
 
       <div className="train-img mt-auto flex flex-col items-center justify-between gap-6">
