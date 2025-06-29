@@ -43,6 +43,10 @@
   margin-top: 0.8em;
 }
 
+/* .hero-section h3 {
+  margin-bottom: 2em;
+} */
+
 .img-box {
   display: flex;
   justify-content: center;
