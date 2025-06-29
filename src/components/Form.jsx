@@ -38,6 +38,7 @@ function Form() {
     "Ife",
     "Ilorin",
     "Jos",
+    "Kano",
     "Lagos",
     "Port-Harcourt",
     "EST",
