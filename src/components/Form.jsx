@@ -17,10 +17,7 @@ function Form() {
     reset,
     trigger,
     formState: { errors },
-  } = useForm({
-  mode: "onSubmit",
-  reValidateMode: "onSubmit",
-});
+  } = useForm();
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = 4;
   const navigate = useNavigate();
@@ -60,7 +57,7 @@ function Form() {
       ["name", "email", "gender", "dob"],
       ["lc", "year_joined", "role", "first_time"],
       ["expect", "social", "allergies", "antidote"],
-      []
+      ["room_with_opps", "emergency", "related_by", "aob"]
     ];
 
     if (currentPage < totalPages - 1) {
