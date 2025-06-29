@@ -31,6 +31,7 @@ function Form() {
     "Abuja",
     "Akure",
     "Benin",
+    "Benue",
     "Calabar",
     "Enugu",
     "Ibadan",
