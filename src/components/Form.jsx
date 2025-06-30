@@ -43,6 +43,7 @@ function Form() {
     "Port-Harcourt",
     "EST",
     "International Delegate",
+    "Alumni",
   ];
 
   const toggleDropdown = () => setIsOpen((prev) => !prev);
