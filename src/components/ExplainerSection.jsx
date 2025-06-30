@@ -7,11 +7,11 @@ function ExplainerSection() {
     <div className="explainer-section">
       <img src="/footer_line.svg" alt="footer line" className="w-screen" />
 
-      <h2 className="font-[FineVintage] text-[32px] md:text-5xl leading-[114px]">
+      <h2 className="font-[FineVintage] text-[24px] sm:text-3xl md:text-5xl leading-[114px]">
         Don't let the train leave you behind
       </h2>
 
-      <div className="w-1/2">
+      <div className="w-[70%] md:w-1/2">
         <img src={explainerImgLg} className="explainer-img  scale-110" alt="" />
       </div>
       <div className="h-20 md:h-28 xl:h-36"></div>

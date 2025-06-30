@@ -35,6 +35,10 @@ form {
   justify-content: center;
 }
 
+.form-header {
+  margin-top: 30px;
+}
+
 form div {
   display: flex;
   flex-direction: column;

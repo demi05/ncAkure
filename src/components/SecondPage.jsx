@@ -23,7 +23,7 @@ function SecondPage({
           <button
             type="button"
             onClick={toggleDropdown}
-            className="w-full mb-11 text-left border dropdown-button border-[#E28B3F] bg-[#E28B3F] text-white font-medium shadow-[5px_5px_0_0_#000]"
+            className="w-ful text-left border dropdown-button border-[#E28B3F] bg-[#E28B3F] text-white font-medium shadow-[5px_5px_0_0_#000]"
           >
             {selectedLC || "LC"}
           </button>
@@ -55,7 +55,7 @@ function SecondPage({
         </label>
         <input
           type="text"
-          placeholder="Year you Joined AIESEC"
+          placeholder="Year you joined AIESEC"
           id="year_joined"
           {...register("year_joined", {
             required: "Please enter the year you joined AIESEC",
@@ -84,14 +84,13 @@ function SecondPage({
           Is this your first time on the road? Or are you an experienced
           voyager?
         </label>
-        <input
-          type="text"
-          placeholder="First Conference Experience?"
-          id="first_time"
-          {...register("first_time", {
-            required: "Is this your First Conference?",
-          })}
-        />
+        <select {...register("first_time", { required: "Pls Pick an Option" })}>
+          <option value="" disabled selected hidden>
+            First conference experience?
+          </option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
         {errors.first_time && (
           <p className="error">{errors.first_time.message}</p>
         )}

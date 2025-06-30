@@ -7,7 +7,7 @@ function FirstPage({
       <div>
         <label for="name">
           We know you're a bonafide Ajala. But what do we call you on this
-          expenditure?
+          expendition?
         </label>
         <input
           type="text"

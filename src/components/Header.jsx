@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import TicketButton from "./TicketButton";
+import { Link } from "react-router-dom";
 
 const Header = ({ hideTicket = false }) => {
   const [countdown, setCountdown] = useState("");
@@ -39,7 +40,7 @@ const Header = ({ hideTicket = false }) => {
 
   return (
     <div className="flex items-center justify-between w-full md:w-[70%] mx-auto">
-      <img src="/logo.svg" alt="NC Akure logo" className="h-12" />
+      <Link to="/"> <img src="/logo.svg" alt="NC Akure logo" className="h-12" /> </Link>  
 
       <div
         className={`font-medium text-[#202120] font-raleway text-base leading-[91%] ${

@@ -43,6 +43,10 @@
   margin-top: 0.8em;
 }
 
+.hero-section h3 {
+  width: 100%;
+}
+
 .img-box {
   display: flex;
   justify-content: center;
@@ -60,8 +64,18 @@
     1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+@media (min-width: 768px) and (max-width: 1020px) {
+  .hero-section h3 {
+    width: 80%;
+  }
+}
+
 @media only screen and (min-width: 1020px) {
   .hero {
     background-image: url("../../public/hero-bg-lg.png");
+  }
+
+  .hero-section h3 {
+    width: 60%;
   }
 }
