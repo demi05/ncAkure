@@ -19,7 +19,7 @@ export const submitForm = async (formData) => {
     const errorMessage = error.response?.data?.message || 
                          error.message || 
                          'Registration failed';
-    
+  
     throw new Error(errorMessage);
   }
 };
